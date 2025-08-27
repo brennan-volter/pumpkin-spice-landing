@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { ThemeProvider } from './contexts/ThemeContext'
+import ThemeToggle from './components/ThemeToggle'
 import './App.css'
 
 function App() {
@@ -14,8 +16,10 @@ function App() {
   }
 
   return (
-    <div className="app">
-      {/* Hero Section */}
+    <ThemeProvider>
+      <div className="app">
+        <ThemeToggle />
+        {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <div className="spice-decoration">🎃</div>
@@ -95,7 +99,8 @@ function App() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </ThemeProvider>
   )
 }
 
